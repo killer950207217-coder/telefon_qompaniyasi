@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUMEN MOBILE — 3D Smartfonlar Do'koni</title>
+    <meta
+      name="description"
+      content="Zamonaviy 3D animatsiyali smartfonlar do'koni. Flagman telefonlarni 360 darajada ko'ring va Telegram orqali tezkor buyurtma bering."
+    />
+    <meta property="og:title" content="LUMEN MOBILE — 3D Smartfonlar Do'koni" />
+    <meta
+      property="og:description"
+      content="Flagman smartfonlarni 3D ko'rinishda tomosha qiling va bir zumda buyurtma bering."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <!-- Top Bar (Strict 3-Zone Contract) -->
+    <header class="site-header" id="siteHeader">
+      <div class="container header-inner">
+        <a href="#top" class="brand-wordmark">LUMEN MOBILE</a>
+
+        <nav class="main-nav" aria-label="Asosiy navigatsiya">
+          <a href="#katalog" class="nav-link">Katalog</a>
+          <a href="#showcase3d" class="nav-link">3D Ko'rgazma</a>
+          <a href="#afzalliklar" class="nav-link">Kafolat</a>
+          <a href="#aloqa" class="nav-link">Aloqa</a>
+        </nav>
+
+        <div class="header-actions">
+          <button
+            type="button"
+            class="btn-cart"
+            id="openCartBtn"
+            aria-label="Savatni ochish"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+              <path d="M3 6h18" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+            <span>Savat</span>
+            <span class="cart-count tabular-nums" id="headerCartCount">0</span>
+          </button>
+
+          <button
+            type="button"
+            class="mobile-menu-toggle"
+            id="mobileMenuBtn"
+            aria-label="Menyuni ochish"
+            aria-expanded="false"
+            aria-controls="mobileNav"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Responsive Mobile Nav -->
+      <nav class="mobile-nav" id="mobileNav" aria-label="Mobil navigatsiya" hidden>
+        <a href="#katalog" class="mobile-nav-link">Katalog</a>
+        <a href="#showcase3d" class="mobile-nav-link">3D Ko'rgazma</a>
+        <a href="#afzalliklar" class="mobile-nav-link">Kafolat</a>
+        <a href="#aloqa" class="mobile-nav-link">Aloqa</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <!-- Hero Section with Interactive 3D Smartphone Stage -->
+      <section class="hero-section" id="showcase3d">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <p class="hero-kicker">
+              2026 Flagman Kolleksiyasi <span aria-hidden="true">·</span> Rasmiy IMEI Kafolat
+            </p>
+            <h1 class="hero-title">
+              Har bir detalda mukammallik va jonli 3D ko'rinish.
+            </h1>
+            <p class="hero-subtitle">
+              Eng so'nggi titan korpusli smartfonlarni 360 darajada aylantirib
+              tomosha qiling, xotira va rangini tanlang hamda Telegram orqali
+              tezkor buyurtma bering.
+            </p>
+
+            <div class="hero-ctas">
+              <a href="#katalog" class="btn-primary">Katalogni ko'rish</a>
+              <button type="button" class="btn-secondary" id="heroInspectBtn">
+                3D Modelni tekshirish
+              </button>
+            </div>
+
+            <div class="hero-proof-strip">
+              <div class="proof-item">
+                <strong class="tabular-nums">12 oy</strong>
+                <span>Rasmiy kafolat</span>
+              </div>
+              <div class="proof-divider" aria-hidden="true"></div>
+              <div class="proof-item">
+                <strong class="tabular-nums">2 soat</strong>
+                <span>Toshkent bo'ylab yetkazish</span>
+              </div>
+              <div class="proof-divider" aria-hidden="true"></div>
+              <div class="proof-item">
+                <strong class="tabular-nums">100%</strong>
+                <span>UzIMEI ro'yxatdan o'tgan</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive 3D Hardware Phone Stage -->
+          <div class="hero-stage-wrapper">
+            <div class="stage-ambient-glow" id="heroStageGlow" aria-hidden="true"></div>
+
+            <div
+              class="phone-3d-viewport"
+              id="heroPhoneViewport"
+              role="region"
+              aria-label="Interaktiv 3D smartfon modeli — aylantirish uchun bosing va suring"
+              tabindex="0"
+            >
+              <div class="phone-3d-assembly" id="heroPhone3D" data-finish="titanium">
+                <!-- Front Face -->
+                <div class="phone-face phone-front">
+                  <div class="phone-bezel">
+                    <div class="phone-screen">
+                      <div class="phone-dynamic-island">
+                        <span class="camera-dot"></span>
+                      </div>
+                      <img
+                        src="/src/assets/images/phone_galaxy_ultra_black_1795173506596.jpg"
+                        alt="Flagman OLED displey"
+                        class="phone-screen-wallpaper"
+                        referrerpolicy="no-referrer"
+                      />
+                      <div class="phone-screen-overlay">
+                        <div class="screen-clock tabular-nums" id="heroPhoneClock">09:41</div>
+                        <div class="screen-date">LUMEN TITAN PRO</div>
+                        <div class="screen-specs-mini">
+                          <span>6.9" LTPO 120Hz</span>
+                          <span aria-hidden="true">·</span>
+                          <span>48MP ProRAW</span>
+                        </div>
+                      </div>
+                      <div class="phone-glass-sheen" id="heroGlassSheen"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Back Face -->
+                <div class="phone-face phone-back">
+                  <div class="phone-back-plate">
+                    <div class="camera-module">
+                      <div class="camera-lens lens-1"><span class="lens-glass"></span></div>
+                      <div class="camera-lens lens-2"><span class="lens-glass"></span></div>
+                      <div class="camera-lens lens-3"><span class="lens-glass"></span></div>
+                      <div class="camera-flash"></div>
+                      <div class="camera-lidar"></div>
+                    </div>
+                    <div class="back-brand-mark">LUMEN</div>
+                  </div>
+                </div>
+
+                <!-- 3D Extruded Metallic Sides -->
+                <div class="phone-side phone-side-left">
+                  <span class="hw-btn hw-btn-mute"></span>
+                  <span class="hw-btn hw-btn-vol-up"></span>
+                  <span class="hw-btn hw-btn-vol-down"></span>
+                </div>
+                <div class="phone-side phone-side-right">
+                  <span class="hw-btn hw-btn-power"></span>
+                </div>
+                <div class="phone-side phone-side-top"></div>
+                <div class="phone-side phone-side-bottom">
+                  <span class="hw-port-usbc"></span>
+                </div>
+              </div>
+
+              <div class="phone-floor-shadow" id="heroFloorShadow" aria-hidden="true"></div>
+            </div>
+
+            <!-- Interactive 3D Controls -->
+            <div class="stage-controls">
+              <div class="finish-swatches" role="group" aria-label="Korpus rangini tanlash">
+                <button
+                  type="button"
+                  class="swatch-btn is-active"
+                  data-finish="titanium"
+                  data-label="Tabiiy Titan"
+                  aria-label="Tabiiy Titan"
+                  title="Tabiiy Titan"
+                >
+                  <span class="swatch-color swatch-titanium"></span>
+                </button>
+                <button
+                  type="button"
+                  class="swatch-btn"
+                  data-finish="obsidian"
+                  data-label="Qora Obsidiyan"
+                  aria-label="Qora Obsidiyan"
+                  title="Qora Obsidiyan"
+                >
+                  <span class="swatch-color swatch-obsidian"></span>
+                </button>
+                <button
+                  type="button"
+                  class="swatch-btn"
+                  data-finish="cobalt"
+                  data-label="Kobalt Ko'k"
+                  aria-label="Kobalt Ko'k"
+                  title="Kobalt Ko'k"
+                >
+                  <span class="swatch-color swatch-cobalt"></span>
+                </button>
+                <button
+                  type="button"
+                  class="swatch-btn"
+                  data-finish="champagne"
+                  data-label="Shampan Oltin"
+                  aria-label="Shampan Oltin"
+                  title="Shampan Oltin"
+                >
+                  <span class="swatch-color swatch-champagne"></span>
+                </button>
+              </div>
+
+              <div class="stage-action-group">
+                <button type="button" class="stage-ctrl-btn" id="flipPhoneBtn">
+                  180° Orqasi
+                </button>
+                <button
+                  type="button"
+                  class="stage-ctrl-btn is-active"
+                  id="autoRotateBtn"
+                  aria-pressed="true"
+                >
+                  Avto-aylanish
+                </button>
+              </div>
+            </div>
+            <p class="stage-hint">
+              Sichqoncha yoki barmoq bilan surib 360° aylantiring
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Product Catalog -->
+      <section class="catalog-section" id="katalog">
+        <div class="container">
+          <div class="section-header-row">
+            <div>
+              <p class="section-kicker">Smartfonlar Katalogi</p>
+              <h2 class="section-title">Eng sara flagman modellar</h2>
+            </div>
+
+            <div class="catalog-toolbar">
+              <div class="search-box">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
+                </svg>
+                <input
+                  type="search"
+                  id="catalogSearchInput"
+                  placeholder="Model qidirish..."
+                  aria-label="Model qidirish"
+                />
+              </div>
+
+              <div class="filter-tabs" role="tablist" aria-label="Toifalar bo'yicha saralash">
+                <button type="button" class="filter-tab is-active" data-category="all" role="tab" aria-selected="true">
+                  Barchasi
+                </button>
+                <button type="button" class="filter-tab" data-category="Flagman" role="tab" aria-selected="false">
+                  Flagman
+                </button>
+                <button type="button" class="filter-tab" data-category="Buklanadigan" role="tab" aria-selected="false">
+                  Buklanadigan
+                </button>
+                <button type="button" class="filter-tab" data-category="Kamerofon" role="tab" aria-selected="false">
+                  Kamerofon
+                </button>
+                <button type="button" class="filter-tab" data-category="Yengil" role="tab" aria-selected="false">
+                  Yengil
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-grid" id="productGrid"></div>
+
+          <div class="empty-catalog" id="emptyCatalogState" hidden>
+            <p>So'rovingiz bo'yicha smartfon topilmadi.</p>
+            <button type="button" class="btn-secondary" id="resetFiltersBtn">
+              Barcha modellarni ko'rsatish
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Craftsmanship & Service Guarantees -->
+      <section class="benefits-section" id="afzalliklar">
+        <div class="container">
+          <div class="section-header-compact">
+            <p class="section-kicker">Xizmat Sifati</p>
+            <h2 class="section-title">Nima uchun aynan Lumen Mobile?</h2>
+          </div>
+
+          <div class="benefits-grid">
+            <article class="benefit-card">
+              <span class="benefit-index tabular-nums">01</span>
+              <h3>Rasmiy UzIMEI va Kafolat</h3>
+              <p>
+                Har bir smartfon zavod qadog'ida, UzIMEI tizimida rasman
+                ro'yxatdan o'tgan holda va 12 oylik servis kafolati bilan
+                topshiriladi.
+              </p>
+            </article>
+
+            <article class="benefit-card">
+              <span class="benefit-index tabular-nums">02</span>
+              <h3>3D Studio Ko'rik</h3>
+              <p>
+                Xarid qilishdan avval har bir telefonning rangi, kamera bloki va
+                yon qirralarini interaktiv 3D rejimda yaqindan tekshiring.
+              </p>
+            </article>
+
+            <article class="benefit-card">
+              <span class="benefit-index tabular-nums">03</span>
+              <h3>Telegram orqali Tezkor Qabul</h3>
+              <p>
+                Buyurtmangiz rasmiylashtirilishi bilan Telegram kanalimizga
+                avtomatik yuboriladi va operatorimiz 15 daqiqa ichida bog'lanadi.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" id="aloqa">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <span class="brand-wordmark">LUMEN MOBILE</span>
+          <p class="footer-desc">
+            Toshkent shahri, Amir Temur shoh ko'chasi, 108 · Har kuni 09:00 dan 22:00 gacha
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#katalog">Katalog</a>
+          <a href="#showcase3d">3D Ko'rgazma</a>
+          <a href="#afzalliklar">Kafolat</a>
+          <a href="tel:+998901234567" class="tabular-nums">+998 90 123 45 67</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© 2026 Lumen Mobile. Barcha huquqlar himoyalangan.</span>
+      </div>
+    </footer>
+
+    <!-- Interactive 3D Product Inspector Modal -->
+    <div class="modal-backdrop" id="inspectorModal" hidden aria-hidden="true">
+      <div
+        class="inspector-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="inspectorTitle"
+      >
+        <button
+          type="button"
+          class="modal-close-btn"
+          id="closeInspectorBtn"
+          aria-label="Yopish"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+
+        <div class="inspector-layout">
+          <!-- Left: 3D Stage & Photo Toggle -->
+          <div class="inspector-visual-pane">
+            <div class="inspector-mode-switch" role="tablist" aria-label="Ko'rinish rejimi">
+              <button type="button" class="mode-tab is-active" id="mode3dBtn">
+                3D Model (360°)
+              </button>
+              <button type="button" class="mode-tab" id="modePhotoBtn">
+                Studio Surati
+              </button>
+            </div>
+
+            <div class="inspector-3d-stage" id="inspector3dStage">
+              <div class="phone-3d-viewport inspector-viewport" id="modalPhoneViewport">
+                <div class="phone-3d-assembly" id="modalPhone3D" data-finish="titanium">
+                  <div class="phone-face phone-front">
+                    <div class="phone-bezel">
+                      <div class="phone-screen">
+                        <div class="phone-dynamic-island">
+                          <span class="camera-dot"></span>
+                        </div>
+                        <img
+                          src=""
+                          alt=""
+                          id="modalScreenImg"
+                          class="phone-screen-wallpaper"
+                          referrerpolicy="no-referrer"
+                        />
+                        <div class="phone-screen-overlay">
+                          <div class="screen-clock tabular-nums">12:00</div>
+                          <div class="screen-date" id="modalScreenLabel">MODEL</div>
+                        </div>
+                        <div class="phone-glass-sheen" id="modalGlassSheen"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="phone-face phone-back">
+                    <div class="phone-back-plate">
+                      <div class="camera-module">
+                        <div class="camera-lens lens-1"><span class="lens-glass"></span></div>
+                        <div class="camera-lens lens-2"><span class="lens-glass"></span></div>
+                        <div class="camera-lens lens-3"><span class="lens-glass"></span></div>
+                        <div class="camera-flash"></div>
+                        <div class="camera-lidar"></div>
+                      </div>
+                      <div class="back-brand-mark" id="modalBackBrand">LUMEN</div>
+                    </div>
+                  </div>
+                  <div class="phone-side phone-side-left">
+                    <span class="hw-btn hw-btn-mute"></span>
+                    <span class="hw-btn hw-btn-vol-up"></span>
+                    <span class="hw-btn hw-btn-vol-down"></span>
+                  </div>
+                  <div class="phone-side phone-side-right">
+                    <span class="hw-btn hw-btn-power"></span>
+                  </div>
+                  <div class="phone-side phone-side-top"></div>
+                  <div class="phone-side phone-side-bottom">
+                    <span class="hw-port-usbc"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="angle-presets">
+                <button type="button" class="angle-btn" data-angle="front">Old tomon</button>
+                <button type="button" class="angle-btn" data-angle="side">Yon qirra</button>
+                <button type="button" class="angle-btn" data-angle="back">Orqa kamera</button>
+                <button type="button" class="angle-btn is-active" data-angle="hero">3D Burchak</button>
+              </div>
+            </div>
+
+            <div class="inspector-photo-stage" id="inspectorPhotoStage" hidden>
+              <img
+                src=""
+                alt=""
+                id="inspectorStudioImg"
+                class="inspector-studio-img"
+                referrerpolicy="no-referrer"
+              />
+            </div>
+          </div>
+
+          <!-- Right: Contiguous Purchase Module -->
+          <div class="inspector-details-pane">
+            <p class="inspector-meta" id="inspectorMeta">Brend · Toifa</p>
+            <h2 class="inspector-title" id="inspectorTitle">Smartfon nomi</h2>
+            <p class="inspector-price tabular-nums" id="inspectorPrice">0 so'm</p>
+            <p class="inspector-desc" id="inspectorDesc"></p>
+
+            <div class="config-group">
+              <span class="config-label">Rang: <strong id="inspectorSelectedColorName">Titan</strong></span>
+              <div class="config-swatches" id="inspectorColorOptions"></div>
+            </div>
+
+            <div class="config-group">
+              <span class="config-label">Ichki xotira:</span>
+              <div class="storage-options" id="inspectorStorageOptions"></div>
+            </div>
+
+            <dl class="specs-list" id="inspectorSpecsList"></dl>
+
+            <div class="inspector-actions">
+              <button type="button" class="btn-primary btn-full" id="inspectorAddCartBtn">
+                Savatga qo'shish
+              </button>
+              <button type="button" class="btn-secondary btn-full" id="inspectorBuyNowBtn">
+                Hoziroq buyurtma berish
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide-Over Cart & Telegram Order Checkout Drawer -->
+    <div class="drawer-backdrop" id="cartDrawerBackdrop" hidden aria-hidden="true">
+      <aside
+        class="cart-drawer"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="cartDrawerTitle"
+      >
+        <div class="drawer-header">
+          <h2 id="cartDrawerTitle">Savat va Buyurtma</h2>
+          <button
+            type="button"
+            class="modal-close-btn"
+            id="closeCartBtn"
+            aria-label="Savatni yopish"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="drawer-body" id="drawerBody">
+          <!-- Cart Items List -->
+          <div class="cart-items-section" id="cartItemsSection"></div>
+
+          <!-- Empty State -->
+          <div class="cart-empty-state" id="cartEmptyState" hidden>
+            <p class="cart-empty-title">Savatingiz hozircha bo'sh</p>
+            <p class="cart-empty-text">
+              Katalogdan o'zingizga yoqqan smartfonni tanlab savatga qo'shing.
+            </p>
+            <button type="button" class="btn-primary" id="browseFromEmptyBtn">
+              Modellarni ko'rish
+            </button>
+          </div>
+
+          <!-- Checkout Form -->
+          <form class="checkout-form" id="checkoutForm" hidden novalidate>
+            <div class="checkout-summary-box">
+              <div class="summary-row">
+                <span>Yetkazib berish</span>
+                <span class="summary-free">Bepul</span>
+              </div>
+              <div class="summary-row summary-total">
+                <span>Jami to'lov</span>
+                <strong class="tabular-nums" id="cartTotalDisplay">0 so'm</strong>
+              </div>
+            </div>
+
+            <h3 class="checkout-heading">Buyurtma ma'lumotlari</h3>
+
+            <div class="form-field">
+              <label for="customerName">Ism va familiyangiz *</label>
+              <input
+                type="text"
+                id="customerName"
+                name="customerName"
+                placeholder="Masalan: Azizbek Karimov"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="customerPhone">Telefon raqamingiz *</label>
+              <input
+                type="tel"
+                id="customerPhone"
+                name="customerPhone"
+                placeholder="+998 90 123 45 67"
+                required
+              />
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-field">
+                <label for="customerRegion">Viloyat / Shahar *</label>
+                <select id="customerRegion" name="customerRegion" required>
+                  <option value="Toshkent shahri">Toshkent shahri</option>
+                  <option value="Toshkent viloyati">Toshkent viloyati</option>
+                  <option value="Samarqand">Samarqand</option>
+                  <option value="Buxoro">Buxoro</option>
+                  <option value="Andijon">Andijon</option>
+                  <option value="Farg'ona">Farg'ona</option>
+                  <option value="Namangan">Namangan</option>
+                  <option value="Xorazm">Xorazm</option>
+                  <option value="Qashqadaryo">Qashqadaryo</option>
+                  <option value="Surxondaryo">Surxondaryo</option>
+                  <option value="Jizzax">Jizzax</option>
+                  <option value="Navoiy">Navoiy</option>
+                  <option value="Sirdaryo">Sirdaryo</option>
+                  <option value="Qoraqalpog'iston">Qoraqalpog'iston</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="paymentMethod">To'lov turi</label>
+                <select id="paymentMethod" name="paymentMethod">
+                  <option value="Naqd pul (yetkazib berganda)">Naqd pul</option>
+                  <option value="Click / Payme">Click / Payme</option>
+                  <option value="Muddatli to'lov">Muddatli to'lov</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="customerAddress">Manzil (ko'cha, uy raqami) *</label>
+              <input
+                type="text"
+                id="customerAddress"
+                name="customerAddress"
+                placeholder="Chilonzor tumani, 9-mavze, 14-uy"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="customerNote">Qo'shimcha izoh (ixtiyoriy)</label>
+              <textarea
+                id="customerNote"
+                name="customerNote"
+                rows="2"
+                placeholder="Masalan: Soat 18:00 dan keyin yetkazib bering"
+              ></textarea>
+            </div>
+
+            <div class="form-error-banner" id="checkoutError" hidden role="alert"></div>
+
+            <button type="submit" class="btn-primary btn-full btn-submit-order" id="submitOrderBtn">
+              Buyurtmani Telegramga yuborish
+            </button>
+          </form>
+
+          <!-- Order Success Confirmation -->
+          <div class="order-success-box" id="orderSuccessBox" hidden>
+            <div class="success-icon-ring" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <h3>Buyurtmangiz qabul qilindi</h3>
+            <p class="success-order-id tabular-nums" id="successOrderNumber">Buyurtma #LM-1001</p>
+            <p class="success-message">
+              Buyurtma tafsilotlari Telegram kanalimizga muvaffaqiyatli yuborildi.
+              Tez orada menejerimiz siz bilan bog'lanadi.
+            </p>
+            <div class="success-receipt" id="successReceipt"></div>
+            <button type="button" class="btn-primary btn-full" id="newOrderBtn">
+              Xaridni davom ettirish
+            </button>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast-notification" id="toastNotification" role="status" aria-live="polite" hidden></div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
